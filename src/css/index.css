@@ -1,0 +1,13 @@
+/*.body {
+	background-color: #FCFAFF;
+	border: 2px solid black;
+}
+*/
+
+#form {
+  /* border: 1px solid gray; */
+  border-radius: 7px;
+}
+.form {
+  box-shadow: 1px 1px 5px gray;
+}
