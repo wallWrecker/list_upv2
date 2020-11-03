@@ -12,7 +12,9 @@ console.log("index.js is working.");
 
 // Trigger Reload Button
 let reload_button = document.getElementById("reloadbutton");
-reload_button.addEventListener("click", () => {basicAjax()});
+reload_button.addEventListener("click", () => {
+  basicAjax();
+});
 
 function basicAjax() {
   let xhttp = new XMLHttpRequest();
@@ -27,3 +29,4 @@ function basicAjax() {
   xhttp.open("GET", "/hello_world/processes/process.php?execute=true");
   xhttp.send();
 }
+

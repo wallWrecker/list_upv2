@@ -2,6 +2,7 @@
   include "../inc/header.php";
   include "../processes/init.php";
 ?>
+
   <section class="container-fullhd mx-4 py-2">
     <!-- Navigation Links -->
     <div class="level">
@@ -46,11 +47,11 @@
                     </a>
                 </div>
               </div>
-            </div>
           </div>
+        </div>
       </div>
     </div> 
-    <!--End of Navigation Link-->
+      <!--End of Navigation Link-->
 
     <div class="mx-3">
       <div class="column">
@@ -68,13 +69,13 @@
             </div> 
             <!-- Filter Buttons -->
             <div class="level-item">
-              <button class="button is-rounded  filter-button">All paid</button>
+              <button class="button is-rounded  filter-button">All Paid</button>
             </div>
             <div class="level-item">
-              <button class="button is-rounded filter-button">All unpaid</button>
+              <button class="button is-rounded filter-button">All Unpaid</button>
             </div>
             <div class="level-item">
-              <button class="button is-rounded is-info filter-button">All record</button>
+              <button class="button is-rounded filter-button is-info">All Records</button>
             </div>
           </div>
         </div>
@@ -83,7 +84,7 @@
         <!-- Left Column Form inputs -->
         <div class="column is-3 has-background-white mx-2">
           <!-- Form -->
-          <form action="<?htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
+          <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
             <div id="form-notification" class="notification is-info">
               <button class="delete"></button>
               Fill the form correctly.
@@ -148,8 +149,7 @@
 
           <!-- Table Component here -->
           <div class="mx-1">
-            <div class="table-container">
-              <table class="table is-fullwidth is-striped has-background-white">
+              <table class="table is-fullwidth is-bordered has-background-white">
                 <thead>
                   <tr>
                     <th>Transacation ID</th>
@@ -162,25 +162,17 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tr>
-                  <td class="is-vcentered">000123</td>
-                  <td class="is-vcentered">Christian Paul</td>
-                  <td class="is-vcentered">TM50X</td>
-                  <td class="is-vcentered">50</td>
-                  <td class="is-vcentered has-text-success">paid</td>
-                  <td class="is-vcentered">OCT/22/2020</td>
-                  <td class="is-vcentered">The quick brown fox is bought by Alexia Diexetremist Hall in OCT-22-2020</td>
-                  <td class="is-vcentered">
-                    <input class="button is-text" type="button" value="ok">
-                  </td>
-                </tr>
+                <tbody id="tbody">
+                  <!-- Javascript Will Handle -->
+                </tbody>
               </table>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<script src="<?php echo sourceLink("js","profile"); ?>"></script>
+<script type="module" src="<?php echo sourceLink("js","profile"); ?>"></script>
+
+<!-- Add footer for the rest of the html -->
 <?php include "../inc/footer.php"; ?>

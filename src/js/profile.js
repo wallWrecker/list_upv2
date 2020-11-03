@@ -1,7 +1,6 @@
-console.log("Were in, Profile.php");
 let data = [
-    {
-    id: 04133,
+  {
+    id: 4133,
     name: "Josh",
     promo: "TM100X",
     amount: 100,
@@ -10,7 +9,7 @@ let data = [
     remarks: "The quick brown cat",
   },
   {
-    id: 02233,
+    id: 2233,
     name: "Jaime",
     promo: "TM50X",
     amount: 50,
@@ -19,7 +18,7 @@ let data = [
     remarks: "The quick brown fox",
   },
   {
-    id: 04133,
+    id: 44133,
     name: "Josh",
     promo: "TM100X",
     amount: 100,
@@ -27,68 +26,119 @@ let data = [
     date: "OCT / 22 / 2020",
     remarks: "The quick brown cat",
   },
-
+  {
+    id: 4133,
+    name: "Josh",
+    promo: "TM100X",
+    amount: 100,
+    status: "unpaid",
+    date: "OCT / 22 / 2020",
+    remarks: "The quick brown cat",
+  },
 ];
 
-const filter_button = document.getElementsByClassName("filter-button");
+console.log("Were in, Profile.php");
 
-let afterThead = document.querySelector("thead");
+initiateFilterButtons();
+
+function initiateFilterButtons(type = "All unpaid") {
+  const filter_buttons = document.getElementsByClassName("filter-button");
+  // Check if all the filter buttons have is-info class attached to them.
+  Array.from(filter_buttons).forEach((element) => {
+    if (element.classList.contains("is-info") == true) {
+      // let searchKey = element.innerHTML;
+      // // Get data from ajax request
+      // let basic_Ajax_Result = basicAjax(searchKey);
+
+    // Call populate table
+      populateTable(data);
+    }
+  });
+
+  // Loop through all the button who have class filter-button
+  for (let button_element of filter_buttons) {
+    // Add click eventlistener.
+    button_element.onclick = function () {
+      triggerFilter(button_element, button_element.innerHTML);
+    };
+  } 
+}
 
 function createColumn(whatElement, data) {
   if (whatElement == "") {
     // create column <td> now.
-    let td = document.createElement("td");
+    const td = document.createElement("td");
     let textnode = document.createTextNode(data);
     td.appendChild(textnode);
+    td.classList.add("is-vcentered");
     return td;
   } else {
     let td = document.createElement("td");
+    td.classList.add("is-vcentered");
     td.appendChild(whatElement);
     return td;
   }
 }
 
-let afterForm = document.querySelector("form");
-function populateTable(someJsonData) {}
-
-function createButton(data) {
-  data.toUpperCase();
+function createButton(data, disabled = "false") {
   let btn = document.createElement("button");
   let textnode = document.createTextNode(data);
 
   btn.onclick = function () {
     paidRecord(data);
   };
-  
-  btn.classList.add("button","is-text", "is-small");
+
+  btn.classList.add("button", "is-success", "is-small");
   btn.appendChild(textnode);
   return btn;
 }
-// Trying out button.
-afterForm.after(createButton("Hi I'm a button"));
 
 // Example of how do data flow in to tables.
-function laidOutToTable(data) {
+function populateTable(data) {
+  let tbody = document.querySelector("thead");
   for (let item of data) {
-    let ispaid = "" ;
+    let ispaid = "";
     let table_row = document.createElement("tr");
-    for (let prop in item) {
-      if(item[prop] == "unpaid") {
+    for (let property in item) {
+      if (item[property] == "unpaid") {
         ispaid = "true";
       }
-     
-      let column = createColumn("", item[prop]);
+      let column = createColumn("", item[property]);
       table_row.appendChild(column);
-
     }
+
     if (ispaid) {
       // let action = createColumn("button here");
-      table_row.appendChild(document.createTextNode("I'm a text"));
+      let hiButton = createButton("Paid Me");
+      table_row.appendChild(createColumn(hiButton));
     }
-    afterThead.after(table_row);
+    tbody.appendChild(table_row);
   }
 }
 
-// createColumn test.
-console.log(createColumn(createButton("Hello there")).childNodes);
-laidOutToTable(data)
+function triggerFilter(element) {
+  if (element.hasAttribute("data-active") == true) {
+    return;
+  }
+  // Check if a button contains is-info class
+  let filter_buttons = document.getElementsByClassName("filter-button");
+  Array.from(filter_buttons).forEach((ele) => {
+    if (ele.classList.contains("is-info")) {
+      ele.classList.remove("is-info");
+      ele.removeAttribute("data-active");
+    }
+  });
+
+  if (!element.classList.contains("is-info")) {
+    // add is-info class to the element
+    element.classList.add("is-info", "active");
+    // Set attribute for the current toggled button
+    element.setAttribute("data-active", "true");
+    // populate table function will called
+    populateTable(data);
+  }
+}
+function fetchData(whatData = "All Records", requestMethod = "GET", data) {
+  if (requestMethod == "GET") {
+  }
+}
