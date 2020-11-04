@@ -52,7 +52,7 @@
 							<div class="control">
 								<label class="label">ID</label>
 								<input 
-									class="input is-info" 
+									class="input is-dark" 
 									name="userid" 
 									type="text"
 									autocomplete="off"
@@ -63,16 +63,16 @@
 							<div class="control">
 								<label class="label">PIK:</label>
 								<input
-									class="input is-info" 
+									class="input is-dark" 
 									name="password" 
 									type="password" 
 									placeholder="Enter your PIK">
 							</div>
 						</div>
-						<div class="field is-grouped is-grouped-centered">
+						<div class="field is-grouped is-grouped-right">
 							<div class="control">
 								<button 
-									class="button is-success is-outlined"
+									class="button is-dark"
 									name="submit"
 									type="submit">
 									Login
@@ -80,7 +80,7 @@
 							</div>
 							<div class="control">
 								<button 
-									class="button is-danger" 
+									class="button is-danger is-outlined" 
 									type="reset">
 									Reset
 								</button>
@@ -107,7 +107,7 @@
 
 			<div class="control">
 				<button 
-					class="button btn-outlined is-info" 
+					class="button btn-outlined is-dark" 
 					name="submit" 
 					type="submit">
 						Submit

@@ -43,14 +43,14 @@ initiateFilterButtons();
 
 function initiateFilterButtons(type = "All unpaid") {
   const filter_buttons = document.getElementsByClassName("filter-button");
-  // Check if all the filter buttons have is-info class attached to them.
+  // Check if all the filter buttons have is-dark class attached to them.
   Array.from(filter_buttons).forEach((element) => {
-    if (element.classList.contains("is-info") == true) {
+    if (element.classList.contains("is-dark") == true) {
       // let searchKey = element.innerHTML;
       // // Get data from ajax request
       // let basic_Ajax_Result = basicAjax(searchKey);
 
-    // Call populate table
+      // Call populate table
       populateTable(data);
     }
   });
@@ -61,7 +61,7 @@ function initiateFilterButtons(type = "All unpaid") {
     button_element.onclick = function () {
       triggerFilter(button_element, button_element.innerHTML);
     };
-  } 
+  }
 }
 
 function createColumn(whatElement, data) {
@@ -88,7 +88,7 @@ function createButton(data, disabled = "false") {
     paidRecord(data);
   };
 
-  btn.classList.add("button", "is-success", "is-small");
+  btn.classList.add("button", "is-dark", "is-small");
   btn.appendChild(textnode);
   return btn;
 }
@@ -120,24 +120,25 @@ function triggerFilter(element) {
   if (element.hasAttribute("data-active") == true) {
     return;
   }
-  // Check if a button contains is-info class
+  // Check if a button contains is-dark class
   let filter_buttons = document.getElementsByClassName("filter-button");
   Array.from(filter_buttons).forEach((ele) => {
-    if (ele.classList.contains("is-info")) {
-      ele.classList.remove("is-info");
+    if (ele.classList.contains("is-dark")) {
+      ele.classList.remove("is-dark");
       ele.removeAttribute("data-active");
     }
   });
 
-  if (!element.classList.contains("is-info")) {
-    // add is-info class to the element
-    element.classList.add("is-info", "active");
+  if (!element.classList.contains("is-dark")) {
+    // add is-dark class to the element
+    element.classList.add("is-dark", "active");
     // Set attribute for the current toggled button
     element.setAttribute("data-active", "true");
     // populate table function will called
     populateTable(data);
   }
 }
+
 function fetchData(whatData = "All Records", requestMethod = "GET", data) {
   if (requestMethod == "GET") {
   }

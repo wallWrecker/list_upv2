@@ -3,12 +3,12 @@
   include "../processes/init.php";
 ?>
 
-  <section class="container-fullhd mx-4 py-2">
+  <section class="container py-2">
     <!-- Navigation Links -->
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-          <a class="is-size-4" href="../index.php">/Listup.io</a>
+          <a class="is-size-4 has-text-dark" href="../index.php">/Listup.io</a>
         </div>
       </div>
 
@@ -53,59 +53,60 @@
     </div> 
       <!--End of Navigation Link-->
 
-    <div class="mx-3">
+    <div class="">
       <div class="column">
       <!-- Contains Filters, Databases, -->
         <!-- Filters and search box -->
         <div class="level">
           <div class="level-left">
             <div class="level-item">
-              <h3 class="subtitle">All Records</h3>
+              <h3 id="header-type" class="subtitle">All Records</h3>
             </div>
           </div>
           <div class="level-right">
             <div class="level-item has-addons">
-              <input class="input is-rounded" type="text" placeholder="Keyword">
+              <input class="input " type="text" placeholder="Keyword">
             </div> 
             <!-- Filter Buttons -->
             <div class="level-item">
-              <button class="button is-rounded  filter-button">All Paid</button>
+              <button class="button filter-button">All Paid</button>
             </div>
             <div class="level-item">
-              <button class="button is-rounded filter-button">All Unpaid</button>
+              <button class="button filter-button">All Unpaid</button>
             </div>
             <div class="level-item">
-              <button class="button is-rounded filter-button is-info">All Records</button>
+              <button class="button filter-button is-dark">All Records</button>
             </div>
           </div>
         </div>
 
       <div class="columns">
         <!-- Left Column Form inputs -->
-        <div class="column is-3 has-background-white mx-2">
+        <!-- Form container -->
+        <div class="column is-3 has-background-white mr-2">
           <!-- Form -->
           <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
-            <div id="form-notification" class="notification is-info">
+            <div id="form-notification" class="notification is-dark">
               <button class="delete"></button>
               Fill the form correctly.
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" name="name" type="text" placeholder="Full name" autocomplete="off">
+                <input class="input is-dark" name="name" type="text" placeholder="Full name" autocomplete="off">
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <input class="input" name="name" type="text" placeholder="Load Type(G50X,TM50X)">
+                <input class="input is-dark" name="name" type="text" placeholder="Load Type(G50X,TM50X)">
               </div>
             </div>
             <div class="field has-addons">
               <div class="control">
-                <button class="button has-text-info-dark" title="Peso Sign (PHP)" disabled>₱</button>
+                <button class="button has-text-dark" title="Peso Sign (PHP)" disabled>₱</button>
               </div>
               <div class="control is-expanded">
-                <input class="input" name="name" type="number" placeholder="Amount">
+                <input class="input is-dark" name="name" type="number" placeholder="Amount">
               </div>
             </div>
             <div class="field has-addons">
@@ -122,7 +123,7 @@
             </div>
             <div class="field">
               <div class="control">
-                <textarea class="textarea" placeholder="Normal textarea"></textarea>
+                <textarea class="textarea is-dark" placeholder="Normal textarea"></textarea>
               </div>
             </div>
           <!-- Form action buttons -->
@@ -130,7 +131,7 @@
             <div class="field">
               <div class="control">
                 <button 
-                  class="button is-success is-fullwidth" 
+                  class="button is-dark is-fullwidth" 
                   type="submit"
                   title="saves the record to database">Place Record</button>
               </div>
@@ -148,7 +149,7 @@
         </div>
 
           <!-- Table Component here -->
-          <div class="mx-1">
+          <div class="">
               <table class="table is-fullwidth is-bordered has-background-white">
                 <thead>
                   <tr>
@@ -163,7 +164,7 @@
                   </tr>
                 </thead>
                 <tbody id="tbody">
-                  <!-- Javascript Will Handle -->
+                  <!-- Javascript Will handle -->
                 </tbody>
               </table>
           </div>
@@ -173,6 +174,5 @@
   </section>
 
 <script type="module" src="<?php echo sourceLink("js","profile"); ?>"></script>
-
 <!-- Add footer for the rest of the html -->
 <?php include "../inc/footer.php"; ?>
