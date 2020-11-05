@@ -12,11 +12,12 @@ console.log("index.js is working.");
 
 // Trigger Reload Button
 let reload_button = document.getElementById("reloadbutton");
-reload_button.addEventListener("click", () => {
-  basicAjax();
+reload_button.addEventListener("click", function(){
+  basicAjaxSynchronous();
+  console.log("Done");
 });
 
-function basicAjax() {
+function basicAjaxSynchronous() {
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -26,7 +27,7 @@ function basicAjax() {
     }
   };
 
-  xhttp.open("GET", "/hello_world/processes/process.php?execute=true");
+  xhttp.open("GET", "/hello_world/processes/process.php?execute=true",false);
   xhttp.send();
 }
 

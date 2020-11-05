@@ -16,18 +16,18 @@
         <div class="level-item">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger">
-              <button class="button is-light is-rounded" aria-haspopup="true">
-                <span class="is-size-5"> Christian Paul</span>
+              <p class="subtitle is-light is-rounded" aria-haspopup="true">
+                <span> Christian Paul</span>
                 <!-- The dropdown icon -->
                 <span class="icon is-small">
                   <i class="fas fa-chevron-circle-down" aria-hidden="true"></i>
                 </span>
-              </button>
+              </p>
             </div>
               <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
+                <div  class="dropdown-content">
                   <!-- My Profile dropdown item -->
-                    <a class="dropdown-item is-active" href="admin.php">
+                    <a class="dropdown-item is-active" href="dashboard.php">
                       <i class="fas fa-lg fa-users-cog" aria-hidden="true"></i>
                       Admin Dashboard
                     </a>
@@ -53,7 +53,7 @@
     </div> 
       <!--End of Navigation Link-->
 
-    <div class="">
+    <div>
       <div class="column">
       <!-- Contains Filters, Databases, -->
         <!-- Filters and search box -->
@@ -65,7 +65,7 @@
           </div>
           <div class="level-right">
             <div class="level-item has-addons">
-              <input class="input " type="text" placeholder="Keyword">
+              <input class="input" type="text" placeholder="Keyword">
             </div> 
             <!-- Filter Buttons -->
             <div class="level-item">
@@ -103,7 +103,7 @@
             </div>
             <div class="field has-addons">
               <div class="control">
-                <button class="button has-text-dark" title="Peso Sign (PHP)" disabled>₱</button>
+                <button class="button is-dark" title="Peso Sign (PHP)" disabled>₱</button>
               </div>
               <div class="control is-expanded">
                 <input class="input is-dark" name="name" type="number" placeholder="Amount">
@@ -173,6 +173,6 @@
     </div>
   </section>
 
-<script type="module" src="<?php echo sourceLink("js","profile"); ?>"></script>
+<script type="module" src="<?php echo sourceLink("js","dashboard"); ?>"></script>
 <!-- Add footer for the rest of the html -->
 <?php include "../inc/footer.php"; ?>

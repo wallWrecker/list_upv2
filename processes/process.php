@@ -25,6 +25,7 @@
 			$data[$key] = func_get_arg($counter);
 			$counter++;
 		}
+		
 		header("Content-Type: application/json");
 		return json_encode($data);
 }

@@ -95,7 +95,7 @@ function createButton(data, disabled = "false") {
 
 // Example of how do data flow in to tables.
 function populateTable(data) {
-  let tbody = document.querySelector("thead");
+  let tbody = document.querySelector("tbody");
   for (let item of data) {
     let ispaid = "";
     let table_row = document.createElement("tr");
@@ -120,9 +120,10 @@ function triggerFilter(element) {
   if (element.hasAttribute("data-active") == true) {
     return;
   }
-  // Check if a button contains is-dark class
+
   let filter_buttons = document.getElementsByClassName("filter-button");
   Array.from(filter_buttons).forEach((ele) => {
+    // Check if a button contains is-dark class
     if (ele.classList.contains("is-dark")) {
       ele.classList.remove("is-dark");
       ele.removeAttribute("data-active");
@@ -134,12 +135,26 @@ function triggerFilter(element) {
     element.classList.add("is-dark", "active");
     // Set attribute for the current toggled button
     element.setAttribute("data-active", "true");
+    // Call to change header.
+    updateHeader(element.innerHTML);
     // populate table function will called
     populateTable(data);
   }
 }
 
-function fetchData(whatData = "All Records", requestMethod = "GET", data) {
-  if (requestMethod == "GET") {
-  }
+function updateHeader(data) {
+  const header = document.querySelector("#header-type");
+  let string = typeof data != "string" ? String(data) : data;
+  header.innerHTML = string;
+  return header;
 }
+
+// Fetches(GET) data from a server
+function getData() {}
+function ajaxFunction(url, requestMethod) {
+  const xhr = new XMLHttpRequest();
+  xhr.open(requestMethod, url);
+  xhr.setRequestHeader();
+}
+// Creates(POST) data from server
+function postData() {}

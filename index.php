@@ -6,13 +6,12 @@
 <section class="container-fullhd has-background-light">
 <div>
 	<a href="test.php">Go to test.php</a>
-	<a href="pages/profile.php">Go to profile.php</a>
+	<a href="pages/dashboard.php">Go to Admin dashboard</a>
 </div>
 
 	<div class="container hero">
 		<div class="hero-body">
-
-		<!-- Parent Column for Left & Right Panes -->
+			<!-- Parent Column for Left & Right Panes -->
 			<div class="columns is-vcentered px-4">
 				<!-- Left Pane -->
 				<div class="column">
@@ -26,7 +25,7 @@
 						<p class="subtitle">If you're ready click the get started.</p>
 						<div class="field is-grouped">
 							<div class="control">
-								<button id="get-started-button" class="button is-outlined is-link">Get Started</button>
+								<button id="get-started-button" class="button is-outlined is-dark">Get Started</button>
 							</div>
 
 							<div class="control">
@@ -91,30 +90,6 @@
 			</div>
 		</div>
 	</div>
-</section>
-
-<!-- Sent us your thoughts section. -->
-<section class="container section">
-	<h3 id="demo" class="subtitle is-3 has-text-centered">Sent us your thoughts</h3>
-	<form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" >
-		<div class="field has-addons">
-			<div class="control">
-				<input 
-					class="input input-outlined is-link" 
-					name="name" 
-					type="text" placeholder="Enter your Email">
-			</div>
-
-			<div class="control">
-				<button 
-					class="button btn-outlined is-dark" 
-					name="submit" 
-					type="submit">
-						Submit
-				</button>
-			</div>
-		</div>
-	</form>
 </section>
 
 <script src="<?php echo sourceLink("js","index"); ?>"></script>
