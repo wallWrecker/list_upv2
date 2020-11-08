@@ -2,12 +2,13 @@
   include "../inc/header.php";
   include "../processes/init.php";
 ?>
-  <section class="container-fullhd mx-4 py-2">
+
+  <section class="container py-2">
     <!-- Navigation Links -->
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-          <a class="is-size-4" href="../index.php">/Listup.io</a>
+          <a class="is-size-4 has-text-dark" href="../index.php">/Listup.io</a>
         </div>
       </div>
 
@@ -15,18 +16,18 @@
         <div class="level-item">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger">
-              <button class="button is-light is-rounded" aria-haspopup="true">
-                <span class="is-size-5"> Christian Paul</span>
+              <p class="subtitle is-light is-rounded" aria-haspopup="true">
+                <span> Christian Paul</span>
                 <!-- The dropdown icon -->
                 <span class="icon is-small">
                   <i class="fas fa-chevron-circle-down" aria-hidden="true"></i>
                 </span>
-              </button>
+              </p>
             </div>
               <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
+                <div  class="dropdown-content">
                   <!-- My Profile dropdown item -->
-                    <a class="dropdown-item is-active" href="admin.php">
+                    <a class="dropdown-item is-active" href="dashboard.php">
                       <i class="fas fa-lg fa-users-cog" aria-hidden="true"></i>
                       Admin Dashboard
                     </a>
@@ -46,65 +47,74 @@
                     </a>
                 </div>
               </div>
-            </div>
           </div>
+        </div>
       </div>
     </div> 
-    <!--End of Navigation Link-->
+      <!--End of Navigation Link-->
 
-    <div class="mx-3">
+    <div>
       <div class="column">
       <!-- Contains Filters, Databases, -->
         <!-- Filters and search box -->
         <div class="level">
           <div class="level-left">
             <div class="level-item">
-              <h3 class="subtitle">All Records</h3>
+              <h3 id="header-type" class="subtitle">All Records</h3>
             </div>
           </div>
           <div class="level-right">
             <div class="level-item has-addons">
-              <input class="input is-rounded" type="text" placeholder="Keyword">
+              <input class="input" type="text" placeholder="Keyword">
             </div> 
             <!-- Filter Buttons -->
             <div class="level-item">
-              <button class="button is-rounded  filter-button">All paid</button>
+              <button class="button filter-button">All Paid</button>
             </div>
             <div class="level-item">
-              <button class="button is-rounded filter-button">All unpaid</button>
+              <button class="button filter-button">All Unpaid</button>
             </div>
             <div class="level-item">
-              <button class="button is-rounded is-info filter-button">All record</button>
+              <button class="button filter-button is-dark">All Records</button>
             </div>
           </div>
         </div> <!-- End filter buttons --> 
         
       <div class="columns">
         <!-- Left Column Form inputs -->
+<<<<<<< HEAD:pages/profile.php
         <div class="column is-3">
           <!-- Form -->
           <form action="<?htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
             <div id="form-notification" class="notification is-info">
               <p class="delete"></p>
+=======
+        <!-- Form container -->
+        <div class="column is-3 has-background-white mr-2">
+          <!-- Form -->
+          <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
+            <div id="form-notification" class="notification is-dark">
+              <button class="delete"></button>
+>>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php
               Fill the form correctly.
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" name="name" type="text" placeholder="Full name" autocomplete="off">
+                <input class="input is-dark" name="name" type="text" placeholder="Full name" autocomplete="off">
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <input class="input" name="name" type="text" placeholder="Load Type(G50X,TM50X)">
+                <input class="input is-dark" name="name" type="text" placeholder="Load Type(G50X,TM50X)">
               </div>
             </div>
             <div class="field has-addons">
               <div class="control">
-                <button class="button has-text-info-dark" title="Peso Sign (PHP)" disabled>₱</button>
+                <button class="button is-dark" title="Peso Sign (PHP)" disabled>₱</button>
               </div>
               <div class="control is-expanded">
-                <input class="input" name="name" type="number" placeholder="Amount">
+                <input class="input is-dark" name="name" type="number" placeholder="Amount">
               </div>
             </div>
             <div class="field has-addons">
@@ -121,7 +131,11 @@
             </div>
             <div class="field">
               <div class="control">
+<<<<<<< HEAD:pages/profile.php
                 <textarea class="textarea" name="" placeholder="Normal textarea"></textarea>
+=======
+                <textarea class="textarea is-dark" placeholder="Normal textarea"></textarea>
+>>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php
               </div>
             </div>
           <!-- Form action buttons -->
@@ -129,7 +143,7 @@
             <div class="field">
               <div class="control">
                 <button 
-                  class="button is-success is-fullwidth" 
+                  class="button is-dark is-fullwidth" 
                   type="submit"
                   title="saves the record to database">Place Record</button>
               </div>
@@ -148,8 +162,12 @@
 
           <!-- Table Component here -->
           <div class="">
+<<<<<<< HEAD:pages/profile.php
             <div class="table-container">
               <table class="table is-fullwidth is-striped">
+=======
+              <table class="table is-fullwidth is-bordered has-background-white">
+>>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php
                 <thead>
                   <tr>
                     <th>Transacation ID</th>
@@ -162,25 +180,21 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tr>
-                  <td class="is-vcentered">000123</td>
-                  <td class="is-vcentered">Christian Paul</td>
-                  <td class="is-vcentered">TM50X</td>
-                  <td class="is-vcentered">50</td>
-                  <td class="is-vcentered has-text-success">paid</td>
-                  <td class="is-vcentered">OCT/22/2020</td>
-                  <td class="is-vcentered">The quick brown fox is bought by Alexia Diexetremist Hall in OCT-22-2020</td>
-                  <td class="is-vcentered">
-                    <input class="button is-text" type="button" value="ok">
-                  </td>
-                </tr>
+                <tbody id="tbody">
+                  <!-- Javascript Will handle -->
+                </tbody>
               </table>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+<<<<<<< HEAD:pages/profile.php
 <script src="<?php echo sourceLink("js","profile"); ?>"></script>
 <?php include "../inc/footer.php"; ?>
+=======
+<script type="module" src="<?php echo sourceLink("js","dashboard"); ?>"></script>
+<!-- Add footer for the rest of the html -->
+<?php include "../inc/footer.php"; ?>
+>>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php

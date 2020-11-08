@@ -2,9 +2,9 @@
 // We need to add neccessary link css files and script files.
 
 function sourceLink($style = "js", $filename = "index") {
-  $current_file = $_SERVER["PHP_SELF"];
+  $current_file_path = $_SERVER["PHP_SELF"];
   $file_type = ["js","css"];
-  $pathToFiles = ["js" => "src/js/", "css" => "src/css/"];
+  $pathToFiles = ["js" => "src/js/", "css" => "src/css/", "bulma" => "node_modules/bulma/css"];
 
   foreach($file_type as $value) {
     if($value == $style) {
@@ -17,7 +17,7 @@ function sourceLink($style = "js", $filename = "index") {
 
   if($isTrue) {
     // Check if the current directory contains pages folder.
-    if(strpos($current_file, "pages")) {
+    if(strpos($current_file_path, "pages")) {
       switch ($style) {
         case 'js':
           $path = $pathToFiles[$style];
