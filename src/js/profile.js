@@ -1,6 +1,6 @@
 console.log("Were in, Profile.php");
 let data = [
-    {
+  {
     id: 04133,
     name: "Josh",
     promo: "TM100X",
@@ -27,7 +27,6 @@ let data = [
     date: "OCT / 22 / 2020",
     remarks: "The quick brown cat",
   },
-
 ];
 
 const filter_button = document.getElementsByClassName("filter-button");
@@ -47,20 +46,18 @@ function createColumn(whatElement, data) {
     return td;
   }
 }
-
 let afterForm = document.querySelector("form");
-function populateTable(someJsonData) {}
 
 function createButton(data) {
   data.toUpperCase();
   let btn = document.createElement("button");
   let textnode = document.createTextNode(data);
 
-  btn.onclick = function () {
+  btn.onclick = () => {
     paidRecord(data);
   };
-  
-  btn.classList.add("button","is-text", "is-small");
+
+  btn.classList.add("button", "is-text", "is-small");
   btn.appendChild(textnode);
   return btn;
 }
@@ -68,21 +65,19 @@ function createButton(data) {
 afterForm.after(createButton("Hi I'm a button"));
 
 // Example of how do data flow in to tables.
-function laidOutToTable(data) {
-  for (let item of data) {
-    let ispaid = "" ;
+function populateTable(someJsonData) {
+  for (let item of someJsonData) {
+    let ispaid = "";
     let table_row = document.createElement("tr");
     for (let prop in item) {
-      if(item[prop] == "unpaid") {
+      if (item[prop] == "unpaid") {
         ispaid = "true";
       }
-     
       let column = createColumn("", item[prop]);
       table_row.appendChild(column);
-
     }
     if (ispaid) {
-      // let action = createColumn("button here");
+      // Create a action button 
       table_row.appendChild(document.createTextNode("I'm a text"));
     }
     afterThead.after(table_row);
@@ -91,4 +86,4 @@ function laidOutToTable(data) {
 
 // createColumn test.
 console.log(createColumn(createButton("Hello there")).childNodes);
-laidOutToTable(data)
+populateTable(data);

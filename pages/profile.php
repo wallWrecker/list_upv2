@@ -77,15 +77,15 @@
               <button class="button is-rounded is-info filter-button">All record</button>
             </div>
           </div>
-        </div>
-
+        </div> <!-- End filter buttons --> 
+        
       <div class="columns">
         <!-- Left Column Form inputs -->
-        <div class="column is-3 has-background-white mx-2">
+        <div class="column is-3">
           <!-- Form -->
           <form action="<?htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
             <div id="form-notification" class="notification is-info">
-              <button class="delete"></button>
+              <p class="delete"></p>
               Fill the form correctly.
             </div>
 
@@ -110,7 +110,7 @@
             <div class="field has-addons">
               <div class="control">
                 <label class="radio">
-                  <input type="radio" name="ispaid" value="unpaid">
+                  <input type="radio" name="ispaid" value="unpaid" >
                   Unpaid
                 </label>
                 <label class="radio">
@@ -121,7 +121,7 @@
             </div>
             <div class="field">
               <div class="control">
-                <textarea class="textarea" placeholder="Normal textarea"></textarea>
+                <textarea class="textarea" name="" placeholder="Normal textarea"></textarea>
               </div>
             </div>
           <!-- Form action buttons -->
@@ -147,9 +147,9 @@
         </div>
 
           <!-- Table Component here -->
-          <div class="mx-1">
+          <div class="">
             <div class="table-container">
-              <table class="table is-fullwidth is-striped has-background-white">
+              <table class="table is-fullwidth is-striped">
                 <thead>
                   <tr>
                     <th>Transacation ID</th>

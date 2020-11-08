@@ -19,7 +19,7 @@
 
 			// Gonna pass this to a json format for the front end.
 			// Array Template (Associative)
-			$data = array("name"=>"","type"=>"","amount"=>"","ispaid"=>"","status"=>"");
+			$data = array("name" => "", "type" => "", "amount" => "", "ispaid" => "", "status" => "");
 			//Set counter to zero, for the func_get_arg() method
 			$counter = 0;
 			foreach($data as $key => $value) {
@@ -37,5 +37,4 @@
 	if (isset($_GET["execute"])) {
 		echo verifyFormInputs($name, $type, $amount, $ispaid, $status); 
 	}
-	
 ?>
