@@ -24,7 +24,7 @@ function basicAjaxSynchronous() {
       // let demo = document.getElementById("demo");
       console.log(this.responseText);
       alert(this.responseText);
-    }
+    } 
   };
 
   xhttp.open("GET", "/hello_world/processes/process.php?execute=true",false);

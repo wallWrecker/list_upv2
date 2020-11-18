@@ -1,6 +1,7 @@
 <?php 
   include "../inc/header.php";
   include "../processes/init.php";
+  include "../processes/process.php";
 ?>
 
   <section class="container py-2">
@@ -17,7 +18,7 @@
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger">
               <p class="subtitle is-light is-rounded" aria-haspopup="true">
-                <span> Christian Paul</span>
+                <span>Christian Paul</span>
                 <!-- The dropdown icon -->
                 <span class="icon is-small">
                   <i class="fas fa-chevron-circle-down" aria-hidden="true"></i>
@@ -27,35 +28,35 @@
               <div class="dropdown-menu" id="dropdown-menu" role="menu">
                 <div  class="dropdown-content">
                   <!-- My Profile dropdown item -->
-                    <a class="dropdown-item is-active" href="dashboard.php">
-                      <i class="fas fa-lg fa-users-cog" aria-hidden="true"></i>
-                      Admin Dashboard
-                    </a>
+                  <a class="dropdown-item is-active" href="dashboard.php">
+                    <i class="fas fa-lg fa-users-cog" aria-hidden="true"></i>
+                    Admin Dashboard
+                  </a>
 
-                    <!-- My Profile dropdown item -->
-                    <a class="dropdown-item" href="profile.php">
-                      <i class="far fa-lg fa-user-circle"></i>
-                      My Profile
-                    </a>
+                  <!-- My Profile dropdown item -->
+                  <a class="dropdown-item" href="#">
+                    <i class="far fa-lg fa-user-circle"></i>
+                    My Profile
+                  </a>
 
-                    <hr class="dropdown-divider">
+                  <hr class="dropdown-divider">
 
-                    <!-- Logout dropdown item -->
-                    <a href="#" class="dropdown-item">
-                      <i class="fas fa-lg fa-sign-out-alt"></i>
-                      Logout
-                    </a>
+                  <!-- Logout dropdown item -->
+                  <a href="#" class="dropdown-item">
+                    <i class="fas fa-lg fa-sign-out-alt"></i>
+                    Logout
+                  </a>
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div> 
+      </div> 
       <!--End of Navigation Link-->
 
     <div>
       <div class="column">
-      <!-- Contains Filters, Databases, -->
+        <!-- Contains Filters, Databases, -->
         <!-- Filters and search box -->
         <div class="level">
           <div class="level-left">
@@ -83,22 +84,21 @@
       <div class="columns">
         <!-- Left Column Form inputs -->
         <!-- Form container -->
-        <div class="column is-3 has-background-white mr-2">
+        <div class="column is-3 has-background-white">
           <!-- Form -->
-          <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
-            <div id="form-notification" class="notification is-dark">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
+            <div id="form-message" class="notification is-dark">
               <button class="delete"></button>
-              Fill the form correctly.
+              <span> Fill the form correctly. </span>
             </div>
-
             <div class="field">
               <div class="control">
-                <input class="input is-dark" name="name" type="text" placeholder="Full name" autocomplete="off">
+                <input id="name" class="input is-dark" name="name" type="text" placeholder="Name" autocomplete="off">
               </div>
             </div>
             <div class="field">
               <div class="control">
-                <input class="input is-dark" name="name" type="text" placeholder="Load Type(G50X,TM50X)">
+                <input id="load-type" class="input is-dark" name="type" type="text" placeholder="Load Type(G50X,TM50X)">
               </div>
             </div>
             <div class="field has-addons">
@@ -106,32 +106,31 @@
                 <button class="button is-dark" title="Peso Sign (PHP)" disabled>₱</button>
               </div>
               <div class="control is-expanded">
-                <input class="input is-dark" name="name" type="number" placeholder="Amount">
+                <input id="amount" class="input is-dark" name="amount" type="number" placeholder="Amount">
               </div>
             </div>
             <div class="field has-addons">
               <div class="control">
                 <label class="radio">
-                  <input type="radio" name="ispaid" value="unpaid">
+                  <input id="unpaid" type="radio" name="status" value="unpaid">
                   Unpaid
                 </label>
                 <label class="radio">
-                  <input type="radio" name="ispaid" value="paid">
+                  <input id="paid" type="radio" name="status" value="paid">
                   Paid
                 </label>
               </div>
             </div>
             <div class="field">
-              <div class="control">
-                <textarea class="textarea is-dark" placeholder="Normal textarea"></textarea>
-              </div>
+              <input id="date-input" class="input is-dark" type="text" name="date">
             </div>
           <!-- Form action buttons -->
             <!-- Submit Button -->
             <div class="field">
               <div class="control">
                 <button 
-                  class="button is-dark is-fullwidth" 
+                  class="button is-dark is-fullwidth"
+                  name="place_record"
                   type="submit"
                   title="saves the record to database">Place Record</button>
               </div>
@@ -149,8 +148,8 @@
         </div>
 
           <!-- Table Component here -->
-          <div class="">
-              <table class="table is-fullwidth is-bordered has-background-white">
+          <div class="column">
+              <table class="table is-fullwidth has-text-centered">
                 <thead>
                   <tr>
                     <th>Transacation ID</th>
@@ -167,12 +166,13 @@
                   <!-- Javascript Will handle -->
                 </tbody>
               </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+  
 <script type="module" src="<?php echo sourceLink("js","dashboard"); ?>"></script>
 <!-- Add footer for the rest of the html -->
 <?php include "../inc/footer.php"; ?>

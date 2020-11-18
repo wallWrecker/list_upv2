@@ -9,32 +9,27 @@
 		}
 	}
 
-	function verifyFormInputs($name, $type, $amount, $isPaid, $status) {
-		// Checks if all this inputs are have all the values.
-		foreach(func_get_args() as $key => $value) {
-			if(empty($value)) {
-				echo "Your Done!";
-			}
+	function verifyInput($data) {
+		if (is_string($data) == false) {
+			// convert any none string value to a string datatype;
+			$x = strval($data);
+			return $x;
 		}
-		// Gonna pass this to a json format for the front end.
-		// Array Template (Associative)
-		$data = array("name" => "", "type" => "", "amount" => "", "isPaid" => "", "status" => "");
-		//Set counter to zero, for the func_get_arg() method
-		$counter = 0;
-		foreach($data as $key => $value) {
-			$data[$key] = func_get_arg($counter);
-			$counter++;
-		}
+	}
+	
+	function postData($data) {
 		
-		header("Content-Type: application/json");
-		return json_encode($data);
-}
+	}
 
-	// Example of Inputs.
-	$name = "Christian"; $type = "G50X"; $amount = 50;
-	$isPaid = "paid"; $status = "Paid on OCT-22-2020";
+	function setUpStream() {
+		
+	}
 
-	if (isset($_GET["execute"])) {
-		echo verifyFormInputs($name, $type, $amount, $isPaid, $status); 
+	if (isset($_GET["your_data"])) {
+		$data_container = array();
+		$data = array("name" => "Christian", "age" => 22, "gender" => "Male", "nationality" => "Filipino");
+		foreach($data as $key) {
+			echo $key;
+		}
 	}
 ?>

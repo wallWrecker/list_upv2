@@ -15,4 +15,4 @@
 </head>
 <body 
   style="height:100vh;"
-  class="has-background-light" >
+  class="has-background-light">
