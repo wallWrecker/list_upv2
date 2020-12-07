@@ -2,6 +2,10 @@
   include "../inc/header.php";
   include "../processes/init.php";
   include "../processes/process.php";
+
+
+  echo __DIR__ . " vs " . $_SERVER["PHP_SELF"] . "</br>";
+  echo htmlspecialchars($_SERVER['PHP_SELF'])
 ?>
 
   <section class="container py-2">
@@ -86,7 +90,7 @@
         <!-- Form container -->
         <div class="column is-3 has-background-white">
           <!-- Form -->
-          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
+          <form action=" <?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             <div id="form-message" class="notification is-dark">
               <button class="delete"></button>
               <span> Fill the form correctly. </span>

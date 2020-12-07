@@ -41,6 +41,3 @@ function sourceLink($style = "js", $filename = "index") {
   }
 }
 
-
-
-

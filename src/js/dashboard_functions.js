@@ -5,7 +5,7 @@ let data = [
     name: "Josh",
     promo: "TM100X",
     amount: 100,
-    status: "unpaid",
+    status: "paid",
     date: "OCT / 22 / 2020",
     remarks: "The quick brown cat",
   },
@@ -23,7 +23,7 @@ let data = [
     name: "Josh",
     promo: "TM100X",
     amount: 100,
-    status: "unpaid",
+    status: "paid",
     date: "OCT / 22 / 2020",
     remarks: "The quick brown cat",
   },
@@ -41,7 +41,6 @@ let data = [
 const elements = document.getElementsByClassName("filter-button");
 
 function initiateFilterButtons() {
-  let selectedElement = "";
   // Check if all the filter buttons have is-dark class attached to them.
   Array.from(elements).forEach((element) => {
     element.onclick = function () {
@@ -93,6 +92,7 @@ const tableBody = document.querySelector("tbody");
 // Example of how do data flow in to tables.
 
 function populateTable(data) {
+  // Check if the 
   // if(table.haveAllReadyGotContents == true) {
   //   // Remove content of the tableBody
 
@@ -103,7 +103,7 @@ function populateTable(data) {
     let table_row = document.createElement("tr");
     for (let property in item) {
       if (item[property] == "unpaid") {
-        ispaid = "true";
+        ispaid = true;
       }
       let column = createColumn("", item[property]);
       table_row.appendChild(column);
@@ -117,12 +117,6 @@ function populateTable(data) {
     tbody.appendChild(table_row);
   }
 }
-
-function callUnpaid(data) {}
-
-function callAllPaid(data) {}
-
-function callAllRecord(data) {}
 
 function triggerFilter(element) {
   if (element.classList.contains("is-dark") == true) {
@@ -139,8 +133,8 @@ function triggerFilter(element) {
   });
 
   if (!element.classList.contains("is-dark")) {
-    // add is-dark class to the element
-    element.classList.add("is-dark", "active");
+    // add is-dark class o the element
+    element.classList.addt("is-dark", "active");
     // Set attribute for the current toggled button
     element.setAttribute("data-active", "true");
     // Call to change header.
@@ -176,19 +170,11 @@ function verifyFormData() {
 
 function verifySearchData(searchKey) {}
 
-function sayName(name) {
-  let s =
-    typeof name != "string"
-      ? alert("Enter a name, not random characters")
-      : alert("Hi there! " + name);
-}
-
-const three = 1 + 2;
-function tree() {
-  console.log("1 + 2 = " + three);
-}
-
 const randomFormInfo = function (element) {};
 
-export { initiateFilterButtons as default, tree };
+export { initiateFilterButtons as default };
 // export * from "./dashboard_functions.js";
+
+if (8 <= 120) {
+  console.log();
+}

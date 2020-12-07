@@ -1,6 +1,10 @@
 <?php
-	#includes header.php    	#includes process functions.   	 #includes init.php(a setup);
-	require "inc/header.php"; require "processes/process.php"; require "processes/init.php";	
+	#includes header.php    	   	 
+	require "inc/header.php";
+	#includes process functions.
+	require "processes/process.php"; 
+	#includes init.php(a setup);
+	require "processes/init.php";
 ?>
 
 <section class="container-fullhd has-background-light">
@@ -94,6 +98,4 @@
 
 <script src="<?php echo sourceLink("js","index"); ?>"></script>
 
-<?php 
-	include "inc/footer.php";
-?>
+<?php include "inc/footer.php"; ?>
