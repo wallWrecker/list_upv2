@@ -41,11 +41,11 @@
 					<!-- This is the form you want to take your login on. -->
 					<form id="form" autocomplete="false" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
 						<div class="my-3">
-						<?php
-							if (isset($_GET["submit"])) {
-								validateLoginInputs($_GET["userid"], $_GET["password"]);
-							}
-						?>
+							<?php
+								if (isset($_GET["submit"])) {
+									validateLoginInputs($_GET["userid"], $_GET["password"]);
+								}
+							?>
 						</div>
 						<div class="field">
 							<div class="control">

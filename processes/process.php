@@ -16,25 +16,12 @@
 				echo "Your Done!";
 			}
 		}
-<<<<<<< HEAD
 
-			// Gonna pass this to a json format for the front end.
-			// Array Template (Associative)
-			$data = array("name" => "", "type" => "", "amount" => "", "ispaid" => "", "status" => "");
-			//Set counter to zero, for the func_get_arg() method
-			$counter = 0;
-			foreach($data as $key => $value) {
-				$data[$key] = func_get_arg($counter);
-				$counter++;
-			}
-			header("Content-Type: application/json");
-			return json_encode($data);
-	}
-=======
 		// Gonna pass this to a json format for the front end.
 		// Array Template (Associative)
 		$data = array("name" => "", "type" => "", "amount" => "", "isPaid" => "", "status" => "");
 		//Set counter to zero, for the func_get_arg() method
+		
 		$counter = 0;
 		foreach($data as $key => $value) {
 			$data[$key] = func_get_arg($counter);
@@ -44,13 +31,12 @@
 		header("Content-Type: application/json");
 		return json_encode($data);
 }
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0
 
 	// Example of Inputs.
-	$name = "Christian"; $type = "G50X"; $amount = 50;
+	$name 	= "Christian"; $type = "G50X"; $amount = 50;
 	$isPaid = "paid"; $status = "Paid on OCT-22-2020";
 
 	if (isset($_GET["execute"])) {
-		echo verifyFormInputs($name, $type, $amount, $isPaid, $status); 
+		echo verifyFormInputs($name, $type, $amount, $isPaid, $status);
 	}
 ?>

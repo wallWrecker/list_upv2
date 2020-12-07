@@ -82,20 +82,12 @@
         
       <div class="columns">
         <!-- Left Column Form inputs -->
-<<<<<<< HEAD:pages/profile.php
-        <div class="column is-3">
-          <!-- Form -->
-          <form action="<?htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
-            <div id="form-notification" class="notification is-info">
-              <p class="delete"></p>
-=======
         <!-- Form container -->
         <div class="column is-3 has-background-white mr-2">
           <!-- Form -->
           <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']);?> " method="POST">
             <div id="form-notification" class="notification is-dark">
               <button class="delete"></button>
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php
               Fill the form correctly.
             </div>
 
@@ -131,11 +123,7 @@
             </div>
             <div class="field">
               <div class="control">
-<<<<<<< HEAD:pages/profile.php
-                <textarea class="textarea" name="" placeholder="Normal textarea"></textarea>
-=======
                 <textarea class="textarea is-dark" placeholder="Normal textarea"></textarea>
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php
               </div>
             </div>
           <!-- Form action buttons -->
@@ -162,12 +150,7 @@
 
           <!-- Table Component here -->
           <div class="">
-<<<<<<< HEAD:pages/profile.php
-            <div class="table-container">
-              <table class="table is-fullwidth is-striped">
-=======
               <table class="table is-fullwidth is-bordered has-background-white">
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php
                 <thead>
                   <tr>
                     <th>Transacation ID</th>
@@ -190,11 +173,6 @@
     </div>
   </section>
 
-<<<<<<< HEAD:pages/profile.php
-<script src="<?php echo sourceLink("js","profile"); ?>"></script>
-<?php include "../inc/footer.php"; ?>
-=======
 <script type="module" src="<?php echo sourceLink("js","dashboard"); ?>"></script>
 <!-- Add footer for the rest of the html -->
 <?php include "../inc/footer.php"; ?>
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0:pages/dashboard.php

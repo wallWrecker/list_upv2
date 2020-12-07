@@ -12,14 +12,8 @@ console.log("index.js is working.");
 
 // Trigger Reload Button
 let reload_button = document.getElementById("reloadbutton");
-<<<<<<< HEAD
 reload_button.addEventListener("click", function () {
   basicAjax();
-=======
-reload_button.addEventListener("click", function(){
-  basicAjaxSynchronous();
-  console.log("Done");
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0
 });
 
 function basicAjaxSynchronous() {
@@ -32,10 +26,6 @@ function basicAjaxSynchronous() {
     }
   };
 
-  xhttp.open("GET", "/hello_world/processes/process.php?execute=true",false);
+  xhttp.open("GET", "/hello_world/processes/process.php?execute=true", false);
   xhttp.send();
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 8fdf53293d5358ec8f5206b8ce895c68e7668ae0
